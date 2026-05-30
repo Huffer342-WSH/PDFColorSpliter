@@ -1,0 +1,23 @@
+[project]
+name = "pdfcolorspliter"
+version = "0.1.0"
+description = "Desktop tool for detecting and splitting color pages from PDF files."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pymupdf>=1.27.2.3",
+    "pywebview>=6.0",
+]
+
+[project.scripts]
+pdfcolorspliter = "pdfcolorspliter.main:main"
+build = "pdfcolorspliter.build:main"
+
+[dependency-groups]
+dev = [
+    "pyinstaller>=6.15.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.9.5,<0.10.0"]
+build-backend = "uv_build"
