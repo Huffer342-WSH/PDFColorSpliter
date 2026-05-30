@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PDFColorSpliter</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="toolbar">
+        <div class="brand">
+          <span>PDFColorSpliter</span>
+        </div>
+        <button id="openButton" type="button">打开PDF</button>
+        <button id="exportButton" type="button" disabled>导出</button>
+        <label class="field">
+          <span>打印模式</span>
+          <select id="modeSelect">
+            <option value="A4 双面">A4 双面</option>
+            <option value="A3 书册">A3 书册</option>
+          </select>
+        </label>
+        <label class="threshold">
+          <span>彩色阈值</span>
+          <input id="thresholdSlider" type="range" min="5" max="60" value="18" />
+          <output id="thresholdValue">18</output>
+        </label>
+      </header>
+
+      <main class="workspace">
+        <aside class="sidebar">
+          <div class="summary">
+            <div id="fileName" class="file-name">未加载 PDF</div>
+            <div id="summaryText" class="summary-text">总页数: 0    彩印页: 0</div>
+          </div>
+          <div id="pageList" class="page-list" role="listbox" aria-label="页面列表"></div>
+        </aside>
+
+        <section class="preview-pane">
+          <div class="preview-topbar">
+            <button id="prevPageButton" type="button" disabled>上一页</button>
+            <div id="pageIndicator" class="page-indicator">- / -</div>
+            <button id="nextPageButton" type="button" disabled>下一页</button>
+            <button id="toggleColorButton" type="button" disabled>切换彩印</button>
+          </div>
+          <div id="canvasWrap" class="canvas-wrap">
+            <canvas id="pdfCanvas"></canvas>
+            <div id="emptyState" class="empty-state">打开 PDF 后显示预览</div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="statusbar">
+        <span id="statusText">就绪</span>
+        <span id="resultText"></span>
+      </footer>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
