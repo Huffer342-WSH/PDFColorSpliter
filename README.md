@@ -1,5 +1,7 @@
 # PDFColorSpliter
 
+![1780155498575](./doc/.assets/README/UI.png)
+
 PDFColorSpliter 用于找出 PDF 中需要彩印的页面，并把原文件拆分成两个打印文件：黑白打印 PDF 和彩色打印 PDF。
 
 它适合在只有部分页面需要彩印时使用，减少手动挑页和反复检查的麻烦。
